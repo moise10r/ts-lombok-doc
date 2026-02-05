@@ -1,6 +1,6 @@
-# lombokx-ts Documentation Website
+# ts-lombok-kit Documentation Website
 
-This is the official documentation website for [lombokx-ts](https://www.npmjs.com/package/lombokx-ts), built with Next.js.
+This is the official documentation website for [ts-lombok-kit](https://www.npmjs.com/package/ts-lombok-kit), built with Next.js.
 
 ## Development
 

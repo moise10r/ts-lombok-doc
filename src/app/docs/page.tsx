@@ -2,8 +2,8 @@ import CodeBlock from '@/components/CodeBlock';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Documentation - lombokx-ts',
-  description: 'Complete API reference and documentation for lombokx-ts decorators.',
+  title: 'Documentation - ts-lombok-kit',
+  description: 'Complete API reference and documentation for ts-lombok-kit decorators.',
 };
 
 const decoratorReference = [
@@ -68,7 +68,7 @@ export default function DocsPage() {
                 Documentation
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400">
-                Complete API reference for lombokx-ts decorators.
+                Complete API reference for ts-lombok-kit decorators.
               </p>
             </div>
 
@@ -78,11 +78,11 @@ export default function DocsPage() {
                 Getting Started
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                lombokx-ts provides TypeScript decorators that generate boilerplate code at compile time.
+                ts-lombok-kit provides TypeScript decorators that generate boilerplate code at compile time.
                 Unlike runtime decorators, the generated code has zero overhead in production.
               </p>
               <CodeBlock
-                code={`import { Data, Builder, Record, With } from 'lombokx-ts/markers';
+                code={`import { Data, Builder, Record, With } from 'ts-lombok-kit/markers';
 
 // Use decorators on your classes
 @Data
@@ -101,7 +101,7 @@ class User {
                 How It Works
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6">
-                lombokx-ts uses TypeScript's compiler API to transform your code at compile time:
+                ts-lombok-kit uses TypeScript's compiler API to transform your code at compile time:
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
@@ -128,7 +128,7 @@ class User {
               </div>
               <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
                 <p className="text-blue-800 dark:text-blue-300 text-sm">
-                  <strong>Note:</strong> The decorator markers (<code className="bg-blue-100 dark:bg-blue-900/30 px-1 rounded">lombokx-ts/markers</code>) are
+                  <strong>Note:</strong> The decorator markers (<code className="bg-blue-100 dark:bg-blue-900/30 px-1 rounded">ts-lombok-kit/markers</code>) are
                   no-op functions at runtime—they only serve as markers for the compiler transformer.
                 </p>
               </div>
@@ -389,7 +389,7 @@ npm run prepare`}
   "compilerOptions": {
     "experimentalDecorators": true,
     "plugins": [
-      { "transform": "lombokx-ts" }
+      { "transform": "ts-lombok-kit" }
     ]
   }
 }`}

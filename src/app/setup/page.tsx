@@ -2,8 +2,8 @@ import CodeBlock from '@/components/CodeBlock';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Setup - lombokx-ts',
-  description: 'Learn how to install and configure lombokx-ts in your TypeScript project.',
+  title: 'Setup - ts-lombok-kit',
+  description: 'Learn how to install and configure ts-lombok-kit in your TypeScript project.',
 };
 
 export default function SetupPage() {
@@ -21,7 +21,7 @@ export default function SetupPage() {
             Getting Started
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400">
-            Get up and running with lombokx-ts in minutes.
+            Get up and running with ts-lombok-kit in minutes.
           </p>
         </div>
 
@@ -58,10 +58,10 @@ export default function SetupPage() {
             1. Installation
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Install lombokx-ts and ts-patch as dev dependencies:
+            Install ts-lombok-kit and ts-patch as dev dependencies:
           </p>
           <CodeBlock
-            code="npm install lombokx-ts ts-patch"
+            code="npm install ts-lombok-kit ts-patch"
             language="bash"
             title="terminal"
           />
@@ -69,7 +69,7 @@ export default function SetupPage() {
             Or with yarn:
           </p>
           <CodeBlock
-            code="yarn add lombokx-ts ts-patch"
+            code="yarn add ts-lombok-kit ts-patch"
             language="bash"
             title="terminal"
           />
@@ -114,14 +114,14 @@ export default function SetupPage() {
             3. Configure tsconfig.json
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Add the lombokx-ts transformer to your <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">tsconfig.json</code>:
+            Add the ts-lombok-kit transformer to your <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">tsconfig.json</code>:
           </p>
           <CodeBlock
             code={`{
   "compilerOptions": {
     "experimentalDecorators": true,
     "plugins": [
-      { "transform": "lombokx-ts" }
+      { "transform": "ts-lombok-kit" }
     ]
   }
 }`}
@@ -141,10 +141,10 @@ export default function SetupPage() {
             4. Start Using Decorators
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Import decorators from <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">lombokx-ts/markers</code> and use them on your classes:
+            Import decorators from <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">ts-lombok-kit/markers</code> and use them on your classes:
           </p>
           <CodeBlock
-            code={`import { Data, Builder } from 'lombokx-ts/markers';
+            code={`import { Data, Builder } from 'ts-lombok-kit/markers';
 
 @Data
 class User {

@@ -1,9 +1,9 @@
 {
-  "name": "lombokx-ts-docs",
+  "name": "ts-lombok-doc",
   "version": "0.1.0",
-  "description": "Documentation website for lombokx-ts - TypeScript Lombok-style decorators",
+  "description": "Documentation website for ts-lombok-kit - TypeScript Lombok-style decorators",
   "private": true,
-  "author": "lombokx-ts authors",
+  "author": "ts-lombok-kit authors",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

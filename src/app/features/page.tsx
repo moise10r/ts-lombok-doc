@@ -2,8 +2,8 @@ import CodeBlock from '@/components/CodeBlock';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Features - lombokx-ts',
-  description: 'Explore all the decorators and features available in lombokx-ts.',
+  title: 'Features - ts-lombok-kit',
+  description: 'Explore all the decorators and features available in ts-lombok-kit.',
 };
 
 const decorators = [
@@ -292,7 +292,7 @@ export default function FeaturesPage() {
           </p>
           <div className="p-6 border border-gray-200 dark:border-gray-800 rounded-xl bg-white dark:bg-gray-900">
             <CodeBlock
-              code={`import { Record, Equals, With, Builder } from 'lombokx-ts/markers';
+              code={`import { Record, Equals, With, Builder } from 'ts-lombok-kit/markers';
 
 @Record
 @Equals
@@ -328,7 +328,7 @@ console.log(Object.isFrozen(p1)); // true`}
             Ready to get started?
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Follow our setup guide to start using lombokx-ts in your project.
+            Follow our setup guide to start using ts-lombok-kit in your project.
           </p>
           <Link
             href="/setup"

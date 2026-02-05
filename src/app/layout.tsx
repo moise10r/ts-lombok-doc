@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "lombokx-ts - TypeScript Lombok-style Decorators",
+  title: "ts-lombok-kit - TypeScript Lombok-style Decorators",
   description: "TypeScript library providing Lombok-style decorators via compile-time AST transformers. Zero runtime cost, full type safety.",
   keywords: ["typescript", "lombok", "decorators", "compile-time", "ast", "transformer", "boilerplate"],
   openGraph: {
-    title: "lombokx-ts - TypeScript Lombok-style Decorators",
+    title: "ts-lombok-kit - TypeScript Lombok-style Decorators",
     description: "Eliminate boilerplate code with compile-time TypeScript decorators",
     type: "website",
   },

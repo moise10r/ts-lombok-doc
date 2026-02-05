@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-[#c41e3a] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">L</span>
               </div>
-              <span className="text-xl font-bold text-white">lombokx-ts</span>
+              <span className="text-xl font-bold text-white">ts-lombok-kit</span>
             </div>
             <p className="text-gray-400 max-w-md">
               TypeScript library providing Lombok-style decorators via compile-time AST transformers.
@@ -47,7 +47,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://github.com/anthropics/lombokx-ts"
+                  href="https://github.com/moise10r/ts-lombok-doc"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c41e3a] transition-colors"
@@ -57,7 +57,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/anthropics/lombokx-ts/issues"
+                  href="https://github.com/moise10r/ts-lombok-doc/issues"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c41e3a] transition-colors"
@@ -67,7 +67,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.npmjs.com/package/lombokx-ts"
+                  href="https://www.npmjs.com/package/ts-lombok-kit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c41e3a] transition-colors"
@@ -81,7 +81,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
           <p>
-            MIT License &copy; {new Date().getFullYear()} lombokx-ts Authors
+            MIT License &copy; {new Date().getFullYear()} ts-lombok-kit Authors
           </p>
           <p className="mt-2 text-sm">
             Inspired by{' '}

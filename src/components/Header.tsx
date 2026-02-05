@@ -7,7 +7,7 @@ const navigation = [
   { name: 'Features', href: '/features' },
   { name: 'Setup', href: '/setup' },
   { name: 'Docs', href: '/docs' },
-  { name: 'GitHub', href: 'https://github.com/anthropics/lombokx-ts', external: true },
+  { name: 'GitHub', href: 'https://github.com/moise10r/ts-lombok-doc', external: true },
 ];
 
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
                 <span className="text-white font-bold text-lg">L</span>
               </div>
               <span className="text-xl font-bold text-gray-900 dark:text-white">
-                lombokx-ts
+                ts-lombok-kit
               </span>
             </Link>
           </div>
@@ -52,7 +52,7 @@ export default function Header() {
               )
             ))}
             <a
-              href="https://www.npmjs.com/package/lombokx-ts"
+              href="https://www.npmjs.com/package/ts-lombok-kit"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#c41e3a] text-white px-4 py-2 rounded-lg hover:bg-[#a01830] transition-colors"
@@ -109,7 +109,7 @@ export default function Header() {
                 )
               ))}
               <a
-                href="https://www.npmjs.com/package/lombokx-ts"
+                href="https://www.npmjs.com/package/ts-lombok-kit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#c41e3a] text-white px-4 py-2 rounded-lg hover:bg-[#a01830] transition-colors text-center"

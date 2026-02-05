@@ -92,7 +92,7 @@ const beforeCode = `class User {
   }
 }`;
 
-const afterCode = `import { Data } from 'lombokx-ts/markers';
+const afterCode = `import { Data } from 'ts-lombok-kit/markers';
 
 @Data
 class User {
@@ -103,9 +103,9 @@ class User {
 
 // That's it! All methods are generated at compile time.`;
 
-const installCode = `npm install lombokx-ts ts-patch`;
+const installCode = `npm install ts-lombok-kit ts-patch`;
 
-const quickStartCode = `import { Record, Builder, With } from 'lombokx-ts/markers';
+const quickStartCode = `import { Record, Builder, With } from 'ts-lombok-kit/markers';
 
 @Record
 @Builder
@@ -146,7 +146,7 @@ export default function Home() {
               <span className="text-[#c41e3a]">TypeScript</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
-              <strong>lombokx-ts</strong> is a TypeScript library that automatically plugs into your
+              <strong>ts-lombok-kit</strong> is a TypeScript library that automatically plugs into your
               editor and build tools, eliminating boilerplate code through compile-time AST transformations.
               Never write another getter again.
             </p>
@@ -190,7 +190,7 @@ export default function Home() {
               Write Less, Do More
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              See how lombokx-ts transforms verbose boilerplate into clean, declarative code.
+              See how ts-lombok-kit transforms verbose boilerplate into clean, declarative code.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-8">
@@ -208,7 +208,7 @@ export default function Home() {
                 <span className="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium dark:bg-green-900/30 dark:text-green-400">
                   After
                 </span>
-                <span className="text-gray-500 text-sm">Just 8 lines with lombokx-ts</span>
+                <span className="text-gray-500 text-sm">Just 8 lines with ts-lombok-kit</span>
               </div>
               <CodeBlock code={afterCode} showLineNumbers />
             </div>
@@ -347,7 +347,7 @@ export default function Home() {
             Ready to eliminate boilerplate?
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto mb-8">
-            Get started with lombokx-ts in minutes. Zero runtime cost, full TypeScript support.
+            Get started with ts-lombok-kit in minutes. Zero runtime cost, full TypeScript support.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -357,7 +357,7 @@ export default function Home() {
               Get Started
             </Link>
             <a
-              href="https://github.com/anthropics/lombokx-ts"
+              href="https://github.com/moise10r/ts-lombok-doc"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-white text-white font-medium hover:bg-white/10 transition-colors"
