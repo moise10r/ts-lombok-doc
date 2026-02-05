@@ -47,7 +47,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://github.com/moise10r/ts-lombok-doc"
+                  href="https://github.com/moise10r/ts-lombok"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c41e3a] transition-colors"
@@ -57,7 +57,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/moise10r/ts-lombok-doc/issues"
+                  href="https://github.com/moise10r/ts-lombok/issues"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c41e3a] transition-colors"

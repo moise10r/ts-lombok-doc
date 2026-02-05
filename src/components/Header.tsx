@@ -7,7 +7,7 @@ const navigation = [
   { name: 'Features', href: '/features' },
   { name: 'Setup', href: '/setup' },
   { name: 'Docs', href: '/docs' },
-  { name: 'GitHub', href: 'https://github.com/moise10r/ts-lombok-doc', external: true },
+  { name: 'GitHub', href: 'https://github.com/moise10r/ts-lombok', external: true },
 ];
 
 export default function Header() {

@@ -357,7 +357,7 @@ export default function Home() {
               Get Started
             </Link>
             <a
-              href="https://github.com/moise10r/ts-lombok-doc"
+              href="https://github.com/moise10r/ts-lombok"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-white text-white font-medium hover:bg-white/10 transition-colors"
