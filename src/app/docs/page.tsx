@@ -20,7 +20,7 @@ const decoratorReference = [
   { name: '@AllArgsConstructor', type: 'Class', description: 'Generate constructor with all fields' },
   { name: '@RequiredArgsConstructor', type: 'Class', description: 'Generate constructor with required fields' },
   { name: '@Singleton', type: 'Class', description: 'Singleton pattern with getInstance()' },
-  { name: '@Log', type: 'Class', description: 'Add protected logger field' },
+  { name: '@Log', type: 'Class', description: 'Adds readonly log: Console property (console) to the class' },
   { name: '@NonNull', type: 'Property', description: 'Validate not null in constructor' },
 ];
 
@@ -106,30 +106,31 @@ class User {
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
                   <div className="w-10 h-10 bg-[#c41e3a] text-white rounded-lg flex items-center justify-center font-bold mb-4">1</div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Parse</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Intercept</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Reads your TypeScript source files and builds an AST
+                    The program transformer hooks into <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded">createProgram()</code> before the type checker runs
                   </p>
                 </div>
                 <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
                   <div className="w-10 h-10 bg-[#c41e3a] text-white rounded-lg flex items-center justify-center font-bold mb-4">2</div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Transform</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Identifies decorated classes and generates methods
+                    Strips decorator annotations and injects the generated constructor and methods into the AST
                   </p>
                 </div>
                 <div className="p-6 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
                   <div className="w-10 h-10 bg-[#c41e3a] text-white rounded-lg flex items-center justify-center font-bold mb-4">3</div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Emit</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Type-check &amp; Emit</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Outputs transformed JavaScript with all methods included
+                    TypeScript type-checks and emits the clean, transformed output — zero decorator errors
                   </p>
                 </div>
               </div>
               <div className="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
                 <p className="text-blue-800 dark:text-blue-300 text-sm">
-                  <strong>Note:</strong> The decorator markers (<code className="bg-blue-100 dark:bg-blue-900/30 px-1 rounded">ts-lombok-kit/markers</code>) are
-                  no-op functions at runtime—they only serve as markers for the compiler transformer.
+                  <strong>Note:</strong> Because the transformation happens <em>before</em> type checking, both the CLI
+                  and your IDE see fully-typed classes with no decorator noise — zero <code className="bg-blue-100 dark:bg-blue-900/30 px-1 rounded">TS2554</code> or
+                  missing-method errors.
                 </p>
               </div>
             </section>
@@ -382,14 +383,18 @@ npm run prepare`}
                     Decorators not being transformed
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    Verify your tsconfig.json includes the plugin and has experimentalDecorators enabled:
+                    Verify your tsconfig.json has the correct plugin config and that you compile with <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded">tspc</code>, not <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded">tsc</code>. Do <strong>not</strong> set <code className="bg-gray-100 dark:bg-gray-800 px-1 rounded">experimentalDecorators</code>:
                   </p>
                   <CodeBlock
                     code={`{
   "compilerOptions": {
-    "experimentalDecorators": true,
+    "target": "ES2022",
     "plugins": [
-      { "transform": "ts-lombok-kit" }
+      {
+        "transform": "ts-lombok-kit",
+        "transformProgram": true,
+        "import": "programTransformer"
+      }
     ]
   }
 }`}

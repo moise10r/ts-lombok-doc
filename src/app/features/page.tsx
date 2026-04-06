@@ -207,12 +207,13 @@ console.log(config1 === config2); // true`,
   {
     name: '@Log',
     category: 'Patterns',
-    description: 'Generates a protected logger field using console.',
+    description: 'Adds a readonly log: Console property (backed by console) to the class instance.',
     code: `@Log
 class UserService {
   createUser(name: string) {
     this.log.info(\`Creating user: \${name}\`);
-    // ...
+    this.log.warn('Watch out!');
+    // this.log is console
   }
 }`,
   },

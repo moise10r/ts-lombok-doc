@@ -35,7 +35,7 @@ export default function SetupPage() {
               <svg className="w-5 h-5 text-[#c41e3a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              TypeScript 4.8+
+              TypeScript 5.0+
             </li>
             <li className="flex items-center gap-2">
               <svg className="w-5 h-5 text-[#c41e3a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ export default function SetupPage() {
             Install ts-lombok-kit and ts-patch as dev dependencies:
           </p>
           <CodeBlock
-            code="npm install ts-lombok-kit ts-patch"
+            code="npm install -D ts-lombok-kit ts-patch"
             language="bash"
             title="terminal"
           />
@@ -69,7 +69,7 @@ export default function SetupPage() {
             Or with yarn:
           </p>
           <CodeBlock
-            code="yarn add ts-lombok-kit ts-patch"
+            code="yarn add -D ts-lombok-kit ts-patch"
             language="bash"
             title="terminal"
           />
@@ -119,18 +119,23 @@ export default function SetupPage() {
           <CodeBlock
             code={`{
   "compilerOptions": {
-    "experimentalDecorators": true,
+    "target": "ES2022",
     "plugins": [
-      { "transform": "ts-lombok-kit" }
+      {
+        "transform": "ts-lombok-kit",
+        "transformProgram": true,
+        "import": "programTransformer"
+      }
     ]
   }
 }`}
             language="json"
             title="tsconfig.json"
           />
-          <div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-            <p className="text-yellow-800 dark:text-yellow-300 text-sm">
-              <strong>Important:</strong> Make sure <code className="bg-yellow-100 dark:bg-yellow-900/30 px-1 rounded">experimentalDecorators</code> is enabled.
+          <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+            <p className="text-blue-800 dark:text-blue-300 text-sm">
+              <strong>Note:</strong> Do <em>not</em> add <code className="bg-blue-100 dark:bg-blue-900/30 px-1 rounded">experimentalDecorators</code>.
+              ts-lombok-kit uses TypeScript 5 native decorators — no legacy flag needed.
             </p>
           </div>
         </section>
@@ -138,13 +143,34 @@ export default function SetupPage() {
         {/* Start Using */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            4. Start Using Decorators
+            4. Compile with tspc
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">
+            Use <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">tspc</code> (ts-patch&apos;s patched compiler) instead of <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">tsc</code>:
+          </p>
+          <CodeBlock
+            code={`{
+  "scripts": {
+    "build": "tspc",
+    "dev": "tspc --watch"
+  }
+}`}
+            language="json"
+            title="package.json"
+          />
+
+        </section>
+
+        {/* Start Using */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            5. Start Using Decorators
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             Import decorators from <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">ts-lombok-kit/markers</code> and use them on your classes:
           </p>
           <CodeBlock
-            code={`import { Data, Builder } from 'ts-lombok-kit/markers';
+            code={`import { Data } from 'ts-lombok-kit/markers';
 
 @Data
 class User {

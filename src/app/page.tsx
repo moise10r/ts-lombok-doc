@@ -81,7 +81,7 @@ const beforeCode = `class User {
     return \`User(id=\${this.id}, name=\${this.name}, email=\${this.email})\`;
   }
 
-  equals(other: User): boolean {
+  equals(other: User | null | undefined): boolean {
     return this.id === other.id &&
            this.name === other.name &&
            this.email === other.email;
@@ -103,7 +103,7 @@ class User {
 
 // That's it! All methods are generated at compile time.`;
 
-const installCode = `npm install ts-lombok-kit ts-patch`;
+const installCode = `npm install -D ts-lombok-kit ts-patch`;
 
 const quickStartCode = `import { Record, Builder, With } from 'ts-lombok-kit/markers';
 
